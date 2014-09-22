@@ -6,7 +6,7 @@ defmodule Myproject.Mixfile do
         app: :myproject,
         version: "0.0.1",
         elixir: "~> 1.1.0-dev",
-        escript: [main_module: Myproject],
+        escript: escript,
         deps: deps
     ]
   end
@@ -19,6 +19,10 @@ defmodule Myproject.Mixfile do
         applications: [:logger],
         mod: { Myproject, [] }
     ]
+  end
+
+  def escript do
+    [main_module: Myproject]
   end
 
   # Dependencies can be Hex packages:
